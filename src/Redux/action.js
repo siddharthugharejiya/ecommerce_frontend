@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import { CART_ADD, CART_FETCH, DATA, SINGLE} from "./action_type";
 
 export const product_action = () => (dispatch) => {
-    fetch('http://localhost:9596/product')
+    fetch('https://ecommerce-backend-zlrs.onrender.com/product')
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
@@ -18,7 +18,7 @@ export const product_action = () => (dispatch) => {
 };
 
 export const single_action = (id) => (dispatch) => {
-    fetch(`http://localhost:9596/single/${id}`)
+    fetch(`https://ecommerce-backend-zlrs.onrender.com/single/${id}`)
         .then((res) => res.json())
         .then((data) => {
             dispatch({
@@ -34,7 +34,7 @@ export const single_action = (id) => (dispatch) => {
 export const addToCart = (product, id) => async (dispatch) => {
   try {
     const Token = localStorage.getItem("Token"); 
-    const response = await fetch(`http://localhost:9596/cart/${id}`, {
+    const response = await fetch(`https://ecommerce-backend-zlrs.onrender.com/cart/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +78,7 @@ export const addToCart = (product, id) => async (dispatch) => {
 };
 
 export const fetchCartData = () => (dispatch) => {
-    fetch(`http://localhost:9596/cart`)
+    fetch(`https://ecommerce-backend-zlrs.onrender.com/cart`)
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -102,7 +102,7 @@ export const fetchCartData = () => (dispatch) => {
 export const remove_action = (id) => (dispatch) => {
   console.log(id);
   
-  fetch(`http://localhost:9596/cart/${id}`, {
+  fetch(`https://ecommerce-backend-zlrs.onrender.com/cart/${id}`, {
     method: "DELETE",
   })
     .then((res) => res.json())

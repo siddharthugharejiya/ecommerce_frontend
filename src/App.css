@@ -2110,9 +2110,9 @@ i.fa-solid.fa-bag-shopping{
   #hide{
     display: none !important;
   }
-  #ro{
+  /* #ro{
     flex-direction: column;
-  }
+  } */
   .food{
     height: auto;
   }

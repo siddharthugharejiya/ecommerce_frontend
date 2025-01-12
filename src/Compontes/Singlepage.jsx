@@ -76,6 +76,7 @@ export default function Singlepage() {
   return (
     <>
       <Navbar_1 />
+      <div className="container">
       <div
         className="d-flex justify-content-between align-items-center"
         style={{
@@ -98,13 +99,13 @@ export default function Singlepage() {
             <div className="col-xxl-3 col-lg-4 col-md-9 m-3 ">
               <div className="row">
                 <div className="col-xxl-11  cate shadow ">
-                  <div className="cate-sub col-xxl-9 col-sm-12 col-12">
+                  <div className="cate-sub col-xxl-9 col-sm-7 col-12">
                     <div className="px-b bbb">
                       {" "}
                       <b>Category </b>
                     </div>
                     <div className="bo"></div>
-                    <div className="dair">
+                    <div className="dair ">
                       <div class="form-check">
                         <input
                           class="form-check-input"
@@ -123,7 +124,7 @@ export default function Singlepage() {
                       <span>[20]</span>
                     </div>
 
-                    <div className="dair">
+                    <div className="dair ">
                       <div class="form-check">
                         <input
                           class="form-check-input"
@@ -162,7 +163,7 @@ export default function Singlepage() {
                     </div>
                   </div>
 
-                  <div className="cate-sub col-xxl-9 col-sm-12">
+                  <div className=" cate-sub col-xxl-9 col-sm-7 col-12">
                     <div className="px-b bbb">
 
                       <b>Price </b>
@@ -188,7 +189,7 @@ export default function Singlepage() {
                     </div>
                   </div>
 
-                  <div className="cate-sub col-xxl-9">
+                  <div className="cate-sub col-xxl-9 col-sm-9 col-12">
                     <div className="px-b bbb">
                       {" "}
                       <b>Colors </b>
@@ -213,7 +214,7 @@ export default function Singlepage() {
                       <span className="btn btn-primary p-2"></span>
                     </div>
 
-                    <div className="dair">
+                    <div className="dair ">
                       <div class="form-check">
                         <input
                           class="form-check-input"
@@ -335,8 +336,8 @@ export default function Singlepage() {
 
                   <div className="cate-subb col-xxl-9">
                     <div className="px-b bbb">
-                      {" "}
-                      <b>Tages </b>
+                   
+                      <b style={{margin:"0px 20px"}}>Tages </b>
                     </div>
                     <div className="bo"></div>
 
@@ -358,16 +359,19 @@ export default function Singlepage() {
 
                     <div class="card mb-3" style={{ maxWidth: "100%" }}>
                       <div class="row g-0" id="ro">
-                        <div class="col-xxl-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                        <div class="col-xxl-5 col-xl-12 col-lg-12 col-md-12 col-sm-7">
                           <div className="image-container" style={{ height: "75vh" }}>
+                            <div style={{border:"10px"}}>
+
                             <Card.Img
                               variant="top"
                               alt="image"
                               src={product.image}
                               className="zoom-image"
-                              style={{ objectFit: "cover" }}
-
-                            />
+                              style={{ objectFit: "contain" }}
+                              
+                              />
+                              </div>
                           </div>
 
                         </div>
@@ -469,6 +473,8 @@ export default function Singlepage() {
 
         </div>
       </div >
+      </div>
+
     </>
   )
 }

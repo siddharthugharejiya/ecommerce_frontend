@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import axios from "axios";
 import { Asidebar } from "./Asidebar";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   Container,
   TextField,
@@ -12,6 +12,7 @@ import {
   Box,
 } from "@mui/material";
 import Swal from 'sweetalert2';
+// import Addproduct from "./Addproduct";
 
 export function Add_Pro() {
   const [state, setState] = useState({
@@ -37,7 +38,7 @@ export function Add_Pro() {
 
   useEffect(() => {
     if (id) {
-      fetch(`http://localhost:9596/product/${id}`)
+      fetch(`https://ecommerce-backend-zlrs.onrender.com/product/${id}`)
         .then((res) => res.json())
         .then((res) => {
           setState({
@@ -58,8 +59,8 @@ export function Add_Pro() {
     e.preventDefault();
     try {
       const url = update
-        ? "http://localhost:9596/add"
-        : `http://localhost:9596/product/${id}`;
+        ? "https://ecommerce-backend-zlrs.onrender.com/add"
+        : `https://ecommerce-backend-zlrs.onrender.com/product/${id}`;
       const method = update ? "POST" : "PUT";
       await fetch(url, {
         method,
@@ -112,13 +113,13 @@ export function Add_Pro() {
   const [subcategory, setSubcategory] = useState([]);
 
   useLayoutEffect(() => {
-    axios.get(`http://localhost:9596/getCategory`).then((res) => {
+    axios.get(`https://ecommerce-backend-zlrs.onrender.com/getCategory`).then((res) => {
       setCategory(res.data.data);
     });
   }, [state]);
 
   useLayoutEffect(() => {
-    axios.get(`http://localhost:9596/subget`).then((res) => {
+    axios.get(`https://ecommerce-backend-zlrs.onrender.com/subget`).then((res) => {
       setSubcategory(res.data.data);
     });
   }, [state]);
@@ -270,9 +271,12 @@ export function Add_Pro() {
                     >
                       <MenuItem value="">Select Subcategory</MenuItem>
                       {subcategory.map((el) => (
+                        
                         <MenuItem key={el._id} value={el._id}>
                           {el.name}
+                          
                         </MenuItem>
+
                       ))}
                     </TextField>
                   </Grid>

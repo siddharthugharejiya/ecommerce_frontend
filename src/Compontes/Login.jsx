@@ -28,7 +28,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:9596/login`, state);
+      const response = await axios.post(`https://ecommerce-backend-zlrs.onrender.com/login`, state);
       const { token } = response.data;
       const decoded = jwtDecode(token);
 

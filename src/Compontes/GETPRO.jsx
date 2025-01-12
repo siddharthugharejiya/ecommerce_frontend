@@ -12,7 +12,7 @@ function GETPRO() {
 
 
   const fetchData = () => {
-    fetch(`http://localhost:9596/product`)
+    fetch(`https://ecommerce-backend-zlrs.onrender.com/product`)
       .then((res) => res.json())
       .then((res) => {
         setState(res.data);
@@ -29,7 +29,7 @@ function GETPRO() {
   }, []);
 
   const handledelete = (id) => {
-    fetch(`http://localhost:9596/product/${id}`, {
+    fetch(`https://ecommerce-backend-zlrs.onrender.com/product/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -80,8 +80,8 @@ function GETPRO() {
 
 
   return (
-    <div className="d-flex flex-column flex-lg-row bg-dark justify-content-evenly mt-2" style={{ height: ` auto` }}>
-      <div className="col-12 col-lg-3">
+    <div className="d-flex flex-column flex-lg-row bg-dark " style={{ height: ` auto` }}>
+      <div className="col-lg-3 col-md-5 col-12">
         <Asidebar />
       </div>
 

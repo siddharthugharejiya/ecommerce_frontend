@@ -24,7 +24,7 @@ import Navbar_1 from "./Navbar_1";
 const Home = () => {
  
   const dispatch = useDispatch();
-  const product = useSelector((state) => state.product.data.data);
+  const product = useSelector((state) => state.product.data.data || [])
   
   const [loading, setLoading] = useState(true);
 
@@ -34,7 +34,7 @@ const Home = () => {
       setLoading(false);
     }, 2000); 
     return () => clearTimeout(timer);
-  }, [product]);
+  }, []);
 
   useEffect(() => {
     dispatch(product_action());
@@ -1067,8 +1067,7 @@ const Home = () => {
               <Skeleton variant="text" width="40%" height={20} />
             </Card.Body>
           </Card>
-        ))
-      : product.map((el, index) => (
+        )): product.map((el, index) => (
           <Card
             id="card-product"
             key={index}
@@ -1440,9 +1439,9 @@ const Home = () => {
 
     
       <div className="food">
-        <div className="col-xxl-5 m-5" data-aos="fade-up">
+        <div className="col-xxl-5 m-5 aos-init aos-animate" data-aos="fade-up">
           <div
-            className="food-count col-xxl-11  col-xl-6 col-lg-7 col-sm-8 col-12" data-aos="fade-up"
+            className="food-count col-xxl-11  col-xl-6 col-lg-7 col-sm-8 col-12 aos-init aos-animate" data-aos="fade-up"
             style={{ display: "flex", flexWrap: "wrap" }}
           >
             <div className="col-12 d-flex">
@@ -1464,19 +1463,19 @@ const Home = () => {
             <div className="food-timer">
               <div className="countdown">
                 <div>
-                  <span id="months">12</span>
+                  <span id="months">00</span>
                   <div className="label">Months</div>
                 </div>
                 <div>
-                  <span id="days">30</span>
+                  <span id="days">00</span>
                   <div className="label">Days</div>
                 </div>
                 <div>
-                  <span id="hours">24</span>
+                  <span id="hours">00</span>
                   <div className="label">Hours</div>
                 </div>
                 <div>
-                  <span id="minutes">60</span>
+                  <span id="minutes">00</span>
                   <div className="label">Minutes</div>
                 </div>
                 

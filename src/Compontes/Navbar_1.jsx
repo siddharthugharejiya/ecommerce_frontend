@@ -36,6 +36,8 @@ function Navbar_1() {
   const handlecloseItems = (id) => {
 
     dispatch(remove_action(id))
+    
+
 
   }
 
@@ -108,10 +110,10 @@ function Navbar_1() {
   const handleLog = () => {
 
     n("/login")
-    // localStorage.removeItem("Token")
-    // localStorage.removeItem("UserId")
-    // localStorage.removeItem("UserRole")
-    // localStorage.removeItem("login")
+    localStorage.removeItem("Token")
+    localStorage.removeItem("UserId")
+    localStorage.removeItem("UserRole")
+    localStorage.removeItem("login")
   }
 
   return (

@@ -12,6 +12,9 @@ import { Asidebar } from '../Compontes/Asidebar';
 import { Add_Pro } from '../Compontes/Add_Pro';
 import GETPRO from '../Compontes/GETPRO';
 import PriveRoute from '../Compontes/PriveRoute';
+import { Addproduct } from '../Compontes/Addproduct';
+import { Subcategory } from '../Compontes/Subcategory';
+// import Addproduct from '../Compontes/Addproduct';
 
 
 const MainRouter = () => {
@@ -32,6 +35,9 @@ const MainRouter = () => {
          <Route path='/aside' element={<Asidebar/>}></Route>
          <Route path='/get' element={<GETPRO/>}></Route>
          <Route path='/add/:id' element={<Add_Pro/>}></Route>
+         <Route path='/category' element={<Addproduct/>}></Route>
+         <Route path='/subcategory' element={<Subcategory/>}></Route>
+        
         
         </Routes>
     )

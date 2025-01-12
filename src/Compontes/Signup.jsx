@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const [state, setState] = useState({
@@ -12,7 +13,7 @@ const Signup = () => {
     email: "",
     password: "",
     secretkey: "",
-    role: ""
+    role: "",
   });
 
   const navigate = useNavigate();
@@ -21,30 +22,31 @@ const Signup = () => {
     const { name, value } = e.target;
     setState({
       ...state,
-      [name]: value
+      [name]: value,
     });
   };
 
   const submit = async (e) => {
     e.preventDefault();
     if (!state.role) {
-      alert("Please select a valid role.");
+      Swal.fire("Error", "Please select a valid role.", "error"); 
       return;
     }
     try {
-      const res = await axios.post("http://localhost:9596/form", state);
+      const res = await axios.post("https://ecommerce-backend-zlrs.onrender.com/form", state);
       console.log(res.data);
+      Swal.fire("Success", "Account created successfully!", "success")
       navigate("/login");
     } catch (error) {
       console.error("Error:", error);
-      alert("Something went wrong. Please try again.");
+      Swal.fire("Error", "Something went wrong. Please try again.", "error"); 
     }
   };
 
   return (
     <div className="d-flex justify-content-center align-items-center mt-3">
       <Form
-        className="p-4"
+        className="shadow p-5 d-flex flex-column justify-content-center"
         style={{ width: "90%", maxWidth: "500px" }}
         onSubmit={submit}
       >
@@ -89,29 +91,41 @@ const Signup = () => {
 
         <Form.Group className="mb-3">
           <Form.Label>Role</Form.Label>
-          <Form.Select
-            name="role"
-            value={state.role}
-            onChange={change}
-          >
-            <option value="">Select Role</option>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
-          </Form.Select>
+          <div className="d-flex">
+            <Form.Check
+              type="radio"
+              label="Admin"
+              name="role"
+              value="admin"
+              checked={state.role === "admin"}
+              onChange={change}
+            />
+            <Form.Check
+              type="radio"
+              label="User"
+              name="role"
+              value="user"
+              className="ms-3"
+              checked={state.role === "user"}
+              onChange={change}
+            />
+          </div>
         </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Secret Key</Form.Label>
-          <Form.Control
-            type="text"
-            name="secretkey"
-            placeholder="Enter secret key"
-            value={state.secretkey}
-            onChange={change}
-          />
-        </Form.Group>
+        {state.role === "admin" && (
+          <Form.Group className="mb-3">
+            <Form.Label>Secret Key</Form.Label>
+            <Form.Control
+              type="text"
+              name="secretkey"
+              placeholder="Enter secret key"
+              value={state.secretkey}
+              onChange={change}
+            />
+          </Form.Group>
+        )}
 
-        <Button variant="success" type="submit" className="w-100">
+        <Button variant="dark" type="submit" className="w-50">
           Submit
         </Button>
 

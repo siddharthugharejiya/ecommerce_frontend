@@ -50,7 +50,7 @@ export const Dashboard = () => {
 
   const [state, setState] = useState([]);
   useLayoutEffect(() => {
-    fetch(`http://localhost:9596/login`)
+    fetch(`https://ecommerce-backend-zlrs.onrender.com/login`)
       .then(res => res.json())
       .then(res => {
         setState(res.data)

@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export const Asidebar = () => {
-  
-  
+
+
   return (
     <div className="container-fluid">
       <div className="row">
@@ -11,7 +11,7 @@ export const Asidebar = () => {
           <ul
             className="navbar-nav sidebar sidebar-dark bg-dark accordion"
             id="accordionSidebar"
-            style={{ height: "auto", width:"auto", position: "sticky", top: 0 }}
+            style={{ height: "auto", width: "auto", position: "sticky", top: 0 }}
           >
             {/* Sidebar Brand */}
             <Link className="sidebar-brand d-flex align-items-center justify-content-center" to="/index">
@@ -79,6 +79,20 @@ export const Asidebar = () => {
                   <Link className="collapse-item" to="/utilities-other">Other</Link>
                 </div>
               </div>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/category">
+                <i className="fas fa-th-large"></i> {/* Icon for Category */}
+                <span className="ms-2">Category</span>
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/subcategory">
+                <i className="fas fa-tag"></i> {/* Icon for Subcategory */}
+                <span className="ms-2">Subcategory</span>
+              </Link>
             </li>
 
             {/* Website Layout */}
