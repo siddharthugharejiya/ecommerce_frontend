@@ -86,7 +86,7 @@ const AllProduct = () => {
       <Navbar_1 />
       <div className="container">
         <div className="row  mt-2">
-        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-9 m-3 ">
+        <div className="col-xxl-3 col-xl-4 col-lg-4 col-md-9 m-3 " >
               <div className="row">
                 <div className="col-xxl-11  cate shadow ">
                   <div className="cate-sub col-xxl-9 col-sm-7 col-12">
@@ -164,6 +164,7 @@ const AllProduct = () => {
                       type="range"
                       min="0"
                       max="10000"
+                      width={100}
                       value={price}
                       onChange={handleRangeChange}
                     />
@@ -434,7 +435,7 @@ const AllProduct = () => {
                         color: "rgb(119 119 119 / 1)",
                       }}
                     >
-                      {el.category || "Card Title"}
+                      {el.name || "Card Title"}
                     </Card.Title>
                     <Card.Text>
                       <i

@@ -22,17 +22,17 @@ import { useNavigate } from "react-router-dom";
 import Navbar_1 from "./Navbar_1";
 
 const Home = () => {
- 
+
   const dispatch = useDispatch();
   const product = useSelector((state) => state.product.data.data || [])
-  
+
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-   
+
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); 
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -46,13 +46,13 @@ const Home = () => {
   const buttonClick = (category) => {
     setFilter(category);
   };
- 
 
- 
+
+
 
 
   useLayoutEffect(() => {
-  
+
 
     const containers = document.querySelectorAll(".image-container");
 
@@ -80,7 +80,7 @@ const Home = () => {
         container.addEventListener("mouseleave", handleMouseLeave);
       }
     });
-  }, [product_action()]); 
+  }, [product_action()]);
   const handleclick = (id) => {
     console.log(id);
     nav(`/product`);
@@ -321,13 +321,14 @@ const Home = () => {
     box-shadow: 0px 4px 8px
       ${(props) => (props === "dark" ? grey[900] : grey[200])};
   `;
-  
+
 
 
   return (
     <>
-    <Navbar_1/>
-      <div className="slider-1">
+      <Navbar_1 />
+      <div className="slider-1" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <Carousel data-bs-theme="dark">
           <Carousel.Item>
             <div className="juicy juicy-left">
@@ -358,7 +359,7 @@ const Home = () => {
 
                     <div className="row">
                       <div
-                        className="col-12 animate__animated animate__fadeInUp"
+                        className="col-12 animate__animated animate__fadeInUp d-flex flex-wrap"
                         style={{
                           animationDuration: "2s",
                           animationDelay: "2s",
@@ -476,7 +477,8 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="t" >
+      <div className="t" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <Tabs
           defaultValue={0}
           orientation="vertical"
@@ -520,16 +522,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                  <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Cake</h3>
                     <button
@@ -551,16 +608,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                  <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Cake</h3>
                     <button
@@ -586,16 +698,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                   <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Fish Meat</h3>
                     <button
@@ -617,16 +784,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                   <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Fresh Meat</h3>
                     <button
@@ -652,16 +874,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                   <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Coriander</h3>
                     <button
@@ -683,16 +960,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                 <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Broccoli</h3>
                     <button
@@ -707,7 +1039,7 @@ const Home = () => {
             </div>
           </TabPanel>
 
-          <TabPanel value={3} className="tab-panel">
+          <TabPanel value={2} className="tab-panel">
             <div className="tab-image row justify-content-around">
               <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
@@ -718,16 +1050,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                   <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Coriander</h3>
                     <button
@@ -749,16 +1136,605 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                 <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
+                  <div className="card-body">
+                    <h3 className="card-title text-light">Broccoli</h3>
+                    <button
+                      className="btn"
+                      style={{ background: "#64B496", color: "white" }}
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabPanel>
+
+
+
+          <TabPanel value={2} className="tab-panel">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
+                <div
+                  className="card car"
+                  style={{
+                    backgroundImage: `url("./image/5.jpg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                   <div className="h-100 w-100">
+                  <div
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
+                  >
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                 
+                  <div className="card-body">
+                    <h3 className="card-title text-light">Coriander</h3>
+                    <button
+                      className="btn"
+                      style={{ background: "#64B496", color: "white" }}
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
+                <div
+                  className="card car"
+                  style={{
+                    backgroundImage: `url("./image/6.jpg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                 <div className="h-100 w-100">
+                  <div
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
+                  >
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                 
+                  <div className="card-body">
+                    <h3 className="card-title text-light">Broccoli</h3>
+                    <button
+                      className="btn"
+                      style={{ background: "#64B496", color: "white" }}
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabPanel>
+
+
+
+
+          <TabPanel value={2} className="tab-panel">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
+                <div
+                  className="card car"
+                  style={{
+                    backgroundImage: `url("./image/5.jpg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                   <div className="h-100 w-100">
+                  <div
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
+                  >
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                 
+                  <div className="card-body">
+                    <h3 className="card-title text-light">Coriander</h3>
+                    <button
+                      className="btn"
+                      style={{ background: "#64B496", color: "white" }}
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
+                <div
+                  className="card car"
+                  style={{
+                    backgroundImage: `url("./image/6.jpg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                 <div className="h-100 w-100">
+                  <div
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
+                  >
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                 
+                  <div className="card-body">
+                    <h3 className="card-title text-light">Broccoli</h3>
+                    <button
+                      className="btn"
+                      style={{ background: "#64B496", color: "white" }}
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </TabPanel>
+
+
+          <TabPanel value={3} className="tab-panel">
+            <div className="tab-image row justify-content-around">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
+                <div
+                  className="card car"
+                  style={{
+                    backgroundImage: `url("./image/5.jpg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                   <div className="h-100 w-100">
+                  <div
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
+                  >
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                 
+                  <div className="card-body">
+                    <h3 className="card-title text-light">Coriander</h3>
+                    <button
+                      className="btn"
+                      style={{ background: "#64B496", color: "white" }}
+                    >
+                      Shop Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
+                <div
+                  className="card car"
+                  style={{
+                    backgroundImage: `url("./image/6.jpg")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                 <div className="h-100 w-100">
+                  <div
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
+                  >
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Broccoli</h3>
                     <button
@@ -775,7 +1751,7 @@ const Home = () => {
 
           <TabPanel value={4} className="tab-panel">
             <div className="tab-image row justify-content-around">
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -784,16 +1760,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                   <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Coriander</h3>
                     <button
@@ -806,7 +1837,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -815,16 +1846,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                 <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Broccoli</h3>
                     <button
@@ -838,10 +1924,11 @@ const Home = () => {
               </div>
             </div>
           </TabPanel>
+
 
           <TabPanel value={5} className="tab-panel">
             <div className="tab-image row justify-content-around">
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -850,16 +1937,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                   <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Coriander</h3>
                     <button
@@ -872,7 +2014,7 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-center">
+              <div className="col-lg-6 col-md-6 col-sm-12 mb-3 d-flex justify-content-around">
                 <div
                   className="card car"
                   style={{
@@ -881,16 +2023,71 @@ const Home = () => {
                     backgroundPosition: "center",
                   }}
                 >
+                 <div className="h-100 w-100">
                   <div
-                    className="tt text-light d-flex p-3"
-                    style={{ flexWrap: "wrap" }}
+                    className="discount-container"
+                    style={{
+                      width: "150px",
+                      height: "150px",
+                      perspective: "1000px",
+                      position: "relative"
+                    }}
                   >
-                    <div style={{ fontSize: "50px" }}>50</div>
-                    <div className="d-flex flex-column justify-content-center align-items-center p-1 mt-1">
-                      <h5>%</h5>
-                      <h5>OFF</h5>
+                    <div
+                      className="discount-circle"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        borderRadius: "50%",
+                        backgroundColor: "black",
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        position: "absolute",
+                        transition: "transform 1s",
+                        transformStyle: "preserve-3d"
+                      }}
+                    >
+                      <div
+                        className="front"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          fontSize: "40px",
+                          color: "white",
+                          display: "flex",
+                          flexDirection: "column",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <div style={{ fontWeight: "bold" }}>50%</div>
+                        <div style={{ fontSize: "20px" }}>OFF</div>
+                      </div>
+                      <div
+                        className="back"
+                        style={{
+                          position: "absolute",
+                          backfaceVisibility: "hidden",
+                          transform: "rotateY(180deg)",
+                          backgroundColor: "red",
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "50%",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          fontSize: "20px",
+                          color: "yellow",
+                          fontWeight: "bold"
+                        }}
+                      >
+                        Special Offer!
+                      </div>
                     </div>
                   </div>
+                  </div>
+                 
                   <div className="card-body">
                     <h3 className="card-title text-light">Broccoli</h3>
                     <button
@@ -904,10 +2101,14 @@ const Home = () => {
               </div>
             </div>
           </TabPanel>
+
+
+
         </Tabs>
       </div>
-      <div className="row fruits" >
-      <div className="col-xxl-12 d-flex justify-content-center mt-3">
+      <div className="row fruits" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
+        <div className="col-xxl-12 d-flex justify-content-center mt-3">
           <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
             <h1>Popular Products</h1>
             <div className="d-flex justify-content-center">
@@ -1012,7 +2213,7 @@ const Home = () => {
                   </span>
                   <span>
 
-                  <button className="btn btn-success mt-1">Shop Now</button>
+                    <button className="btn btn-success mt-1">Shop Now</button>
                   </span>
                 </div>
               </div>
@@ -1021,131 +2222,132 @@ const Home = () => {
         </div>
 
         <div className="col-xl-8 " >
-  <div className="card-content ">
-    {loading
-      ? Array.from({ length: 6 }).map((_, index) => (
-          <Card
-            key={index}
-            id="card-product"
-            style={{
-              marginBottom: "20px",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            }}
-            className="shadow"
-          >
-            <div className="image-container">
-              <Skeleton
-                variant="rectangular"
-                height={200}
-                style={{
-                  borderRadius: "10px",
-                  marginBottom: "10px",
-                  width: "100%",
-                }}
-              />
-            </div>
-            <div id="shop">
-              <Skeleton variant="circular" width={30} height={30} />
-            </div>
-            <div id="product-icon" style={{ display: "flex", gap: "10px" }}>
-              <Skeleton variant="circular" width={25} height={25} />
-              <Skeleton variant="circular" width={25} height={25} />
-            </div>
-            <Card.Body id="card-body-1">
-              <Skeleton
-                variant="text"
-                width="60%"
-                height={20}
-                style={{ marginBottom: "5px" }}
-              />
-              <Skeleton
-                variant="text"
-                width="80%"
-                height={20}
-                style={{ marginBottom: "5px" }}
-              />
-              <Skeleton variant="text" width="40%" height={20} />
-            </Card.Body>
-          </Card>
-        )): product.map((el, index) => (
-          <Card
-            id="card-product"
-            key={index}
-            onClick={() => handleclick(el._id)}
-            style={{
-              marginBottom: "20px",
-              boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
-            }}
-          >
-            <div className="image-container">
-              <Card.Img
-                variant="top"
-                alt="image"
-                src={el.image}
-                className="zoom-image"
+          <div className="card-content ">
+            {loading
+              ? Array.from({ length: 6 }).map((_, index) => (
+                <Card
+                  key={index}
+                  id="card-product"
+                  style={{
+                    marginBottom: "20px",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                  }}
+                  className="shadow"
+                >
+                  <div className="image-container">
+                    <Skeleton
+                      variant="rectangular"
+                      height={200}
+                      style={{
+                        borderRadius: "10px",
+                        marginBottom: "10px",
+                        width: "100%",
+                      }}
+                    />
+                  </div>
+                  <div id="shop">
+                    <Skeleton variant="circular" width={30} height={30} />
+                  </div>
+                  <div id="product-icon" style={{ display: "flex", gap: "10px" }}>
+                    <Skeleton variant="circular" width={25} height={25} />
+                    <Skeleton variant="circular" width={25} height={25} />
+                  </div>
+                  <Card.Body id="card-body-1">
+                    <Skeleton
+                      variant="text"
+                      width="60%"
+                      height={20}
+                      style={{ marginBottom: "5px" }}
+                    />
+                    <Skeleton
+                      variant="text"
+                      width="80%"
+                      height={20}
+                      style={{ marginBottom: "5px" }}
+                    />
+                    <Skeleton variant="text" width="40%" height={20} />
+                  </Card.Body>
+                </Card>
+              )) : product.map((el, index) => (
+                <Card
+                  id="card-product"
+                  key={index}
+                  onClick={() => handleclick(el._id)}
+                  style={{
+                    marginBottom: "20px",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  <div className="image-container">
+                    <Card.Img
+                      variant="top"
+                      alt="image"
+                      src={el.image}
+                      className="zoom-image"
 
-              />
-            </div>
-            <div id="shop">
-              <i className="fa-solid fa-bag-shopping"></i>
-            </div>
-            <div id="product-icon">
-              <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
-              <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
-            </div>
-            <Card.Body id="card-body-1">
-              <Card.Title
-                style={{
-                  fontSize: "15px",
-                  color: "rgb(119 119 119 / 1)",
-                }}
-              >
-                {el.category || "Card Title"}
-              </Card.Title>
-              <Card.Text>
-                <i
-                  className="fa-regular fa-star"
-                  style={{ color: "orange" }}
-                ></i>{" "}
-                <i
-                  className="fa-regular fa-star"
-                  style={{ color: "orange" }}
-                ></i>{" "}
-                <i
-                  className="fa-regular fa-star"
-                  style={{ color: "orange" }}
-                ></i>
-                <i
-                  className="fa-regular fa-star"
-                  style={{ color: "orange" }}
-                ></i>
-                <i
-                  className="fa-regular fa-star"
-                  style={{ color: "orange" }}
-                ></i>
-              </Card.Text>
-              <Card.Text>
-                {el.description || "Description goes here."}
-              </Card.Text>
-              <Card.Text
-                style={{
-                  padding: "10px",
-                  color: "rgb(100 180 150 / 1)",
-                  fontWeight: "800",
-                }}
-              >
-                ${el.price}
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        ))}
-  </div>
-</div>
+                    />
+                  </div>
+                  <div id="shop">
+                    <i className="fa-solid fa-bag-shopping"></i>
+                  </div>
+                  <div id="product-icon">
+                    <i className="fa-regular fa-eye p-3" id="product-icon-1"></i>
+                    <i className="fa-regular fa-heart p-3" id="product-icon-1"></i>
+                  </div>
+                  <Card.Body id="card-body-1">
+                    <Card.Title
+                      style={{
+                        fontSize: "15px",
+                        color: "rgb(119 119 119 / 1)",
+                      }}
+                    >
+                      {el.name || "Card Title"}
+                    </Card.Title>
+                    <Card.Text>
+                      <i
+                        className="fa-regular fa-star"
+                        style={{ color: "orange" }}
+                      ></i>{" "}
+                      <i
+                        className="fa-regular fa-star"
+                        style={{ color: "orange" }}
+                      ></i>{" "}
+                      <i
+                        className="fa-regular fa-star"
+                        style={{ color: "orange" }}
+                      ></i>
+                      <i
+                        className="fa-regular fa-star"
+                        style={{ color: "orange" }}
+                      ></i>
+                      <i
+                        className="fa-regular fa-star"
+                        style={{ color: "orange" }}
+                      ></i>
+                    </Card.Text>
+                    <Card.Text>
+                      {el.description || "Description goes here."}
+                    </Card.Text>
+                    <Card.Text
+                      style={{
+                        padding: "10px",
+                        color: "rgb(100 180 150 / 1)",
+                        fontWeight: "800",
+                      }}
+                    >
+                      ${el.price}
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              ))}
+          </div>
+        </div>
 
       </div>
 
 
-      <div className="container d-flex justify-content-center align-items-center">
+      <div className="container d-flex justify-content-center align-items-center" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div className="fresh">
           <div className="row">
             <div className="slider-container" >
@@ -1327,7 +2529,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="pro">
+      <div className="pro" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div className="row">
           <div className="slid-1">
             <Slider {...settings1}>
@@ -1437,8 +2640,9 @@ const Home = () => {
         </div>
       </div>
 
-    
-      <div className="food">
+
+      <div className="food" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div className="col-xxl-5 m-5 aos-init aos-animate" data-aos="fade-up">
           <div
             className="food-count col-xxl-11  col-xl-6 col-lg-7 col-sm-8 col-12 aos-init aos-animate" data-aos="fade-up"
@@ -1478,17 +2682,18 @@ const Home = () => {
                   <span id="minutes">00</span>
                   <div className="label">Minutes</div>
                 </div>
-                
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bottom-silder row mt-5" >
+      <div className="bottom-silder row mt-5" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div className="col-xxl-12 d-flex justify-content-center" >
           <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
-            <h1>Great Words From People</h1>
+            <h1 className="text-center">Great Words From People</h1>
             <div className="d-flex justify-content-center">
               <p
                 className="text-center"
@@ -1661,7 +2866,8 @@ const Home = () => {
         </Slider>
       </div>
 
-      <div className="latest-news mt-5 mb-3">
+      <div className="latest-news mt-5 mb-3" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div className="col-xxl-12 d-flex justify-content-center">
           <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
             <h1>Latest News</h1>
@@ -1767,7 +2973,8 @@ const Home = () => {
         </Slider>
       </div>
 
-      <div className="footer" >
+      <div className="footer" data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <div className="container-fluid">
           <div className="container mt-5">
             <div className="row">
