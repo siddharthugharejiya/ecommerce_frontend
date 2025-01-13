@@ -477,7 +477,8 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </div>
-      <div className="t " data-aos="zoom-in-up">
+      <div className="t " data-aos="fade-up"
+        data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <Tabs
           defaultValue={0}
           orientation="vertical"

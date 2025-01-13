@@ -359,7 +359,7 @@ export default function Singlepage() {
 
                     <div class="card mb-3" style={{ maxWidth: "100%" }}>
                       <div class="row g-0" id="ro">
-                        <div class="col-xxl-5 col-xl-12 col-lg-12 col-md-12 col-sm-7">
+                        <div class="col-xxl-5 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                           <div className="image-container" style={{ height: "75vh" }}>
                             <div style={{border:"10px"}}>
 

@@ -34,7 +34,9 @@ const Signup = () => {
     }
     try {
       const res = await axios.post("https://ecommerce-backend-zlrs.onrender.com/form", state);
-      console.log(res.data);
+      console.log(res.data)
+      console.log(res);
+      
       Swal.fire("Success", "Account created successfully!", "success")
       navigate("/login");
     } catch (error) {
