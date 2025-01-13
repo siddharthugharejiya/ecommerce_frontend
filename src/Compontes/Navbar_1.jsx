@@ -175,9 +175,9 @@ function Navbar_1() {
                       add == true ? <Link id="bottom" to={"/add"}>admin</Link> : ""
                     }
 
-                    <div id="bottom">
 
-                      <button className="btn" style={{ fontSize: "13px", border: "none" }} type="submit" onClick={handleLog}> LogOut</button>
+                    <div className="d-flex">
+                      <Link className="btn" style={{ fontSize: "13px",fontWeight:600, border: "none" }} type="submit" onClick={handleLog}> Logout</Link>
                     </div>
 
 
@@ -195,8 +195,13 @@ function Navbar_1() {
             </div>
 
             <div className="d-flex align-items-center">
-              <div onClick={handleShow} className="me-2 btn" style={{ background: "transparent", color: "black", border: "none" }}>
-                <i className="ri-shopping-cart-line"></i>
+              <div onClick={handleShow} className="d-flex  align-items-center me-2 btn" style={{ background: "transparent", color: "black", border: "none" }}>
+                <i className="ri-shopping-cart-line"  style={{ color: "black", margin: "0px 5px", fontSize: "20px" }}></i>
+               <div>
+
+                   Cart 
+               </div>
+
               </div>
               <Offcanvas show={show} onHide={handleClose} placement="end">
                 <Offcanvas.Header closeButton>

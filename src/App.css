@@ -945,9 +945,9 @@ div#pro-1{
 #form{
   width: 70%;
 }
-.form-control{
+/* .form-control{
   width: 70% !important;
-}
+} */
 .countdown {
   text-align: center;
 }
@@ -2066,8 +2066,15 @@ i.fa-solid.fa-bag-shopping{
     height: 150vh;
   }
   .t{
-    height: auto;
+    height: 140vh !important;
   }
+   .car{
+    margin: 10px;
+   }
+   .fresh,.slid-1{
+    height: 55vh !important;
+    /* border: 1px solid red; */
+   }
 }
 @media (min-width:1200px)
 {
@@ -2078,7 +2085,7 @@ i.fa-solid.fa-bag-shopping{
     flex-wrap: nowrap;
   }
   .footer{
-    height: auto;
+    height: 77vh;
   }
   .car{
     height: 100vh !important;
@@ -2095,11 +2102,11 @@ i.fa-solid.fa-bag-shopping{
     height: auto;
   }
   .bottom-silder , .latest-news{
-    height: 150vh;
+    height: 90vh;
   }
 
 }
-@media (min-width: 992px){
+@media (max-width: 992px){
   #phone {
     width: 100%;
   }
@@ -2149,12 +2156,12 @@ i.fa-solid.fa-bag-shopping{
     padding: 20px;
   }
   .fresh , .slid-1{
-    height: 40vh !important;
+    height: 30vh !important;
     /* border: 1px solid red; */
   }
   .bottom-silder , .latest-news{
-    height: 120vh;
-    border: 1px solid red;
+    height: 50vh !important;
+    /* border: 1px solid red; */
   }
 }
 @media (max-width: 768px) {
@@ -2402,9 +2409,15 @@ i.fa-solid.fa-bag-shopping{
   }
 
   .juicy-left1 , .juicy-left {
-    height: 49vh !important;
+    height: 37vh !important;
     background-size: cover; /* Ensures the full image is shown */
     background-position: top center; /* Adjusts the image position if needed */
+  }
+  #m-1{
+    font-size: 12px !important;
+  }
+  #m-p{
+    font-size: 12px !important;
   }
   .display-3 {
     font-size: 25px !important; /* Adjust font size for mobile phones */

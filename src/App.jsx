@@ -5,6 +5,7 @@ import Navbar_1 from './Compontes/Navbar_1';
 import MainRouter from './Router/MainRouter';
 import "react-loading-skeleton/dist/skeleton.css";
 
+import 'animate.css';
 
 function App() {
   
