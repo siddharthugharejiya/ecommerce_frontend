@@ -177,7 +177,7 @@ function Navbar_1() {
 
 
                     <div className="d-flex">
-                      <Link className="btn" style={{ fontSize: "13px",fontWeight:600, border: "none" }} type="submit" onClick={handleLog}> Logout</Link>
+                      <button className="btn ms-1" style={{ fontSize: "14px",fontWeight:600, border: "none" }} type="submit" onClick={handleLog}> Logout</button>
                     </div>
 
 

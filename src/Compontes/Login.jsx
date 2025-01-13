@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
 import Swal from 'sweetalert2';
 
@@ -29,6 +29,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(`https://ecommerce-backend-zlrs.onrender.com/login`, state);
+      console.log(response.data);
+      
       const { token } = response.data;
       const decoded = jwtDecode(token);
 
@@ -102,8 +104,11 @@ const Login = () => {
               </div>
           </Col>
         </Row>
+        <div className='d-flex justify-content-end align-items-center mb-4'>
+           <Link to="/signup" style={{textDecoration:"none",color:"green"}}>Signup</Link>
+        </div>
         <div className='d-flex justify-content-center align-items-center'>
-
+               
         <Button
           className="btn btn-dark w-75"
           type="submit"
