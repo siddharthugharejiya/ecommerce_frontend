@@ -134,7 +134,7 @@ const Signup = () => {
 
         <Row className="mt-3">
           <Col className="d-flex justify-content-end">
-            <Button variant="link" onClick={() => navigate("/login")}>
+            <Button variant="link" style={{textDecoration:"none",color:"green"}} onClick={() => navigate("/login")}>
               Already have an account? Login
             </Button>
           </Col>
