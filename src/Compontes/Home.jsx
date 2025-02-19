@@ -2868,7 +2868,7 @@ const Home = () => {
       </div>
 
       <div className="latest-news mt-5 mb-3" data-aos="fade-up"
-        data-aos-anchor-placement="top-center" data-aos-duration="1000">
+        data-aos-anchor-placement="top-center" data-aos-duration="1000"  >
         <div className="col-xxl-12 d-flex justify-content-center">
           <div className="bottom-text d-flex justify-content-center flex-column align-items-center">
             <h1>Latest News</h1>

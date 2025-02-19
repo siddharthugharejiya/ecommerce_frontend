@@ -2355,12 +2355,15 @@ i.fa-solid.fa-bag-shopping{
     height: 90vh !important;
   }
   .bottom-silder , .latest-news{
-    height:90vh !important;
+    /* margin: 9rem 0; */
+    height:100vh !important;
   }
   .fresh , .slid-1{
     height: 60vh !important;
-    /* border: 1px solid red; */
+    /* 
+    border: 1px solid red; */
   }
+  
   
 }
 
@@ -2376,6 +2379,7 @@ i.fa-solid.fa-bag-shopping{
     height: 40vh !important;
     /* border: 1px solid red; */
   }
+
   
 
   .cta {
@@ -2420,7 +2424,11 @@ i.fa-solid.fa-bag-shopping{
     font-size: 12px !important;
   }
   .display-3 {
-    font-size: 25px !important; /* Adjust font size for mobile phones */
+    font-size: 20px !important; /* Adjust font size for mobile phones */
+  }
+  .bottom-silder , .latest-news{
+    /* margin: 9rem 0; */
+    height:130vh !important;
   }
 }
 @media (max-width:300px)
