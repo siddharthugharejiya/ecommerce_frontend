@@ -30,7 +30,7 @@ const Login = () => {
     try {
       const response = await axios.post(`https://ecommerce-backend-zlrs.onrender.com/login`, state);
       console.log(response.data);
-      
+
       const { token } = response.data;
       const decoded = jwtDecode(token);
 
@@ -65,7 +65,7 @@ const Login = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{height:"75vh"}}>
+    <div className="d-flex justify-content-center align-items-center" style={{ height: "75vh" }}>
       <Form
         className="border border-1 p-4 p-md-5 shadow"
         style={{ width: "90%", maxWidth: "500px" }}
@@ -80,42 +80,42 @@ const Login = () => {
           <Col xs={12} className="mb-3 text-center">
             <Form.Label>Email</Form.Label>
             <div className='d-flex justify-content-center align-items-center'>
-            <Form.Control
-              type="email"
-              name="email"
-              value={state.email}
-              onChange={handleChange}
-              placeholder="Enter email"
-            />
+              <Form.Control
+                type="email"
+                name="email"
+                value={state.email}
+                onChange={handleChange}
+                placeholder="Enter email"
+              />
             </div>
-           
+
           </Col>
           <Col xs={12} className="mb-3 text-center">
             <Form.Label>Password</Form.Label>
             <div className='d-flex justify-content-center align-items-center'>
 
-            <Form.Control
-              type="password"
-              name="password"
-              value={state.password}
-              onChange={handleChange}
-              placeholder="Enter password"
+              <Form.Control
+                type="password"
+                name="password"
+                value={state.password}
+                onChange={handleChange}
+                placeholder="Enter password"
               />
-              </div>
+            </div>
           </Col>
         </Row>
         <div className='d-flex justify-content-end align-items-center mb-4'>
-           <Link to="/signup" style={{textDecoration:"none",color:"green"}}>Signup</Link>
+          <Link to="/signup" style={{ textDecoration: "none", color: "green" }}>Signup</Link>
         </div>
         <div className='d-flex justify-content-center align-items-center'>
-               
-        <Button
-          className="btn btn-dark w-75"
-          type="submit"
+
+          <Button
+            className="btn btn-dark w-75"
+            type="submit"
           >
-          Submit
-        </Button>
-          </div>
+            Submit
+          </Button>
+        </div>
       </Form>
     </div>
   );

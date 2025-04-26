@@ -29,20 +29,21 @@ const Signup = () => {
   const submit = async (e) => {
     e.preventDefault();
     if (!state.role) {
-      Swal.fire("Error", "Please select a valid role.", "error"); 
+      Swal.fire("Error", "Please select a valid role.", "error");
       return;
     }
     try {
-      
+
       const res = await axios.post("https://ecommerce-backend-zlrs.onrender.com/form", state);
+
       console.log(res.data)
       console.log(res);
-      
+
       Swal.fire("Success", "Account created successfully!", "success")
       navigate("/login");
     } catch (error) {
       console.error("Error:", error);
-      Swal.fire("Error", "Something went wrong. Please try again.", "error"); 
+      Swal.fire("Error", "Something went wrong. Please try again.", "error");
     }
   };
 
@@ -54,7 +55,7 @@ const Signup = () => {
         onSubmit={submit}
       >
         <Row className="justify-content-center align-items-center mb-4">
-          <Col xs={6}>
+          <Col xs={6} className="d-flex justify-content-center">
             <img src="./image/logo.png" alt="Logo" className="img-fluid" />
           </Col>
         </Row>
@@ -134,7 +135,7 @@ const Signup = () => {
 
         <Row className="mt-3">
           <Col className="d-flex justify-content-end">
-            <Button variant="link" style={{textDecoration:"none",color:"green"}} onClick={() => navigate("/login")}>
+            <Button variant="link" style={{ textDecoration: "none", color: "green" }} onClick={() => navigate("/login")}>
               Already have an account? Login
             </Button>
           </Col>

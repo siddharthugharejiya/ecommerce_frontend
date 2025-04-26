@@ -649,11 +649,11 @@ span.carousel-control-next-icon,span.carousel-control-prev-icon{
 /* Wrapper for the entire component */
 /* Existing .t */
 .t {
+  height: auto !important;
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 88vh;
   flex-wrap: wrap;
   /* border: 1px solid red; */
 }
@@ -1365,7 +1365,7 @@ article div h1 {
   color: #fff;
 }
 .footer{
-  height: 65vh;
+  height: 105vh;
   width: 100%;
   background-color: rgb(247 247 248 /1);
   display: flex;
@@ -1975,7 +1975,7 @@ i.fa-solid.fa-bag-shopping{
   .slick-list{
     height: 100vh !important;
     margin: 30px 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   .fresh {
     height: 40vh !important;
@@ -1991,17 +1991,17 @@ i.fa-solid.fa-bag-shopping{
   }
   .bottom-silder , .latest-news{
     height: 51vh !important;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
 }
 @media (max-width : 1800px)
 {
-  .bottom-silder , .latest-news{
-    height: 164vh;
+   .bottom-silder , .latest-news{
+    height: 100vh;
 
   }
-}
+} 
 @media (min-width:1500px)
 {
   .t{
@@ -2019,7 +2019,7 @@ i.fa-solid.fa-bag-shopping{
     margin-bottom: 10px;
    }
    .slick-list{
-    height: auto !important;
+    height: 106vh !important;
     margin: 30px 0;
     /* border: 1px solid red; */
   }
@@ -2036,7 +2036,10 @@ i.fa-solid.fa-bag-shopping{
     left: 210px;
   }
   .bottom-silder , .latest-news{
-    height: 164vh;
+    height: 98vh !important;
+  }
+  .footer{
+    height: 123vh;
   }
 
 }
@@ -2075,6 +2078,9 @@ i.fa-solid.fa-bag-shopping{
     height: 55vh !important;
     /* border: 1px solid red; */
    }
+   .footer{
+    height: 123vh;
+  }
 }
 @media (min-width:1200px)
 {
@@ -2085,7 +2091,7 @@ i.fa-solid.fa-bag-shopping{
     flex-wrap: nowrap;
   }
   .footer{
-    height: 77vh;
+    height: 80vh;
   }
   .car{
     height: 100vh !important;
@@ -2102,14 +2108,31 @@ i.fa-solid.fa-bag-shopping{
     height: auto;
   }
   .bottom-silder , .latest-news{
-    height: 90vh;
+    height: 130vh;
   }
+  .fresh{
+    height: 50vh !important;
+  }
+  .food{
+    height: 100vh;
+  }
+  .t{
+    height: 130vh !important;
+  }
+  .juicy-left1 , .juicy-left {
+    height: 80vh !important;
+    background-size: cover;
+    background-position: top center;
+    margin-bottom: 20px;
+  }
+
 
 }
 @media (max-width: 992px){
   #phone {
     width: 100%;
   }
+  
   .juicy-left-main{
     width: fit-content;
   }
@@ -2142,27 +2165,31 @@ i.fa-solid.fa-bag-shopping{
   .css-11lwzu7{
     flex-wrap: wrap;
   }
-  .footer{
-    height: auto;
-  }
+
   .side-2{
     height: 94vh;
   }
   .side-2-sub{
-    height: 70%;
+    height: 100%;
   }
   .cate-sub {
     margin: 0;
     padding: 20px;
   }
   .fresh , .slid-1{
-    height: 30vh !important;
+    /* height: 30vh !important; */
+    max-height: 70vh !important;
     /* border: 1px solid red; */
   }
   .bottom-silder , .latest-news{
-    height: 50vh !important;
+    max-height: 190vh !important;
     /* border: 1px solid red; */
   }
+  .footer{
+    height: 150vh !important;
+  }
+
+
 }
 @media (max-width: 768px) {
   .col-12.col-lg-5.d-flex.align-items-center{
@@ -2253,7 +2280,7 @@ i.fa-solid.fa-bag-shopping{
     padding: 3px 8px;
   }
   .footer{
-    height: auto;
+    height: 140vh !important;
   }
   .fruits {
     height: auto;
@@ -2266,18 +2293,26 @@ i.fa-solid.fa-bag-shopping{
     padding: 20px;
   }
   .bottom-silder , .latest-news{
-    height: 95vh;
+    height: auto;
   }
   .fresh , .slid-1{
-    height: 40vh !important;
+    height: 65vh !important;
     /* border: 1px solid red; */
   }
-  
+  .juicy-left1 , .juicy-left {
+    height: 95vh !important;
+    background-size: cover; /* Ensures the full image is shown */
+    background-position: top center; /* Adjusts the image position if needed */
+  }
 }
 
 @media(max-width:576px)
 {
-
+  .juicy-left1 , .juicy-left {
+    height: 90vh !important;
+    background-size: cover; /* Ensures the full image is shown */
+    background-position: top center; /* Adjusts the image position if needed */
+  }
   #phone {
     display: none !important;
   }
@@ -2355,7 +2390,7 @@ i.fa-solid.fa-bag-shopping{
     height: 90vh !important;
   }
   .bottom-silder , .latest-news{
-    height:90vh !important;
+    height:auto !important;
   }
   .fresh , .slid-1{
     height: 60vh !important;
@@ -2373,7 +2408,7 @@ i.fa-solid.fa-bag-shopping{
     height: 100vh !important;
   }
   .fresh , .slid-1{
-    height: 40vh !important;
+    height: 63vh !important;
     /* border: 1px solid red; */
   }
   
@@ -2409,7 +2444,7 @@ i.fa-solid.fa-bag-shopping{
   }
 
   .juicy-left1 , .juicy-left {
-    height: 37vh !important;
+    height: 69vh !important;
     background-size: cover; /* Ensures the full image is shown */
     background-position: top center; /* Adjusts the image position if needed */
   }
@@ -2425,6 +2460,9 @@ i.fa-solid.fa-bag-shopping{
 }
 @media (max-width:300px)
 {
+  .juicy-left{
+    height: 100vh;
+  }
   .juicy-left-main{
     margin: 0 !important;
   }
@@ -2441,5 +2479,8 @@ i.fa-solid.fa-bag-shopping{
   .juicy-left1 {
     background-size: contain; /* Ensures the full image is shown */
     background-position: top center; /* Adjusts the image position if needed */
+  }
+  .footer{
+    height: auto;
   }
 }
