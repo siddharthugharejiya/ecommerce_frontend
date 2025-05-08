@@ -34,7 +34,7 @@ const Signup = () => {
     }
     try {
 
-      const res = await axios.post("https://ecommerce-backend-zlrs.onrender.com/form", state);
+      const res = await axios.post("https://ecommerce-backend-zlrs.onrender.com/form", state)
 
       console.log(res.data)
       console.log(res);

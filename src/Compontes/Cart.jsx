@@ -7,7 +7,6 @@ const Product = () => {
     const products = useSelector(state => state.cart.data);
     console.log(products);
 
-    const [state,setstate]=useState()
     
 
     useEffect(() => {
