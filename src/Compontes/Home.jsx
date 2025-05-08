@@ -547,7 +547,7 @@ const Home = () => {
                           transformStyle: "preserve-3d"
                         }}
                       >
-                        {/* <div
+                        <div
                           className="front"
                           style={{
                             position: "absolute",
@@ -582,7 +582,7 @@ const Home = () => {
                           }}
                         >
                           Special Offer!
-                        </div> */}
+                        </div>
                       </div>
                     </div>
                   </div>
